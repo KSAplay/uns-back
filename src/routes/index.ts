@@ -1,9 +1,12 @@
 import { Router } from 'express';
 
+// Controladores importados
+import { getNoticia } from '../controllers/noticias.controller'
+
 // Aqui se colocan las rutas
 const router = Router();
 
 router.route('/')
-    .get((req, res) => res.send('Hola Mundo'))
+    .get(getNoticia)
 
 export default router;

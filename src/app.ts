@@ -12,7 +12,7 @@ app.set('port', process.env.PORT || 4000);
 // middlewares
 app.use(morgan('dev')); // Sirve para identificar las rutas, incluso si hay un error
 app.use(express.json());
-app.use(express.urlencoded());
+//app.use(express.urlencoded());
 
 // routes
 app.use('/api', indexRoutes);
