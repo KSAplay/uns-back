@@ -1,12 +1,15 @@
 import { Router } from 'express';
 
 // Controladores importados
-import { getNoticia } from '../controllers/noticias.controller'
+import { getSecciones } from '../controllers/secciones.controller';
 
 // Aqui se colocan las rutas
 const router = Router();
 
+// ----------------------------------------------------------
+//                 RUTAS PARA LAS SECCIONES
+// ----------------------------------------------------------
 router.route('/')
-    .get(getNoticia)
+    .get(getSecciones)
 
 export default router;

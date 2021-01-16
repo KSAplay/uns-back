@@ -14,3 +14,14 @@ CREATE TABLE secciones(
     create_at TIMESTAMP,
     update_at TIMESTAMP
 );
+
+CREATE TABLE temas(
+    id_tema SERIAL PRIMARY KEY,
+    descripcion VARCHAR(1024),
+    color_titulo CHAR(7),
+    color_fondo CHAR(7),
+    color_flecha_carrousel CHAR(7),
+    color_btn_carrousel_relleno_activo CHAR(7),
+    color_btn_carrousel_borde_activo CHAR(7),
+    color_btn_carrousel_borde_inactivo CHAR(7)
+);
