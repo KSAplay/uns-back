@@ -5,7 +5,8 @@ var cors = require('cors');
 
 const app = express();
 
-import indexRoutes from './routes/index';
+import noticiasRoutes from './routes/noticias.route';
+import seccionesRoutes from './routes/secciones.route';
 
 // Configuración
 app.set('port', process.env.PORT || 4000);
@@ -17,7 +18,8 @@ app.use(express.json());
 //app.use(express.urlencoded());
 
 // routes
-app.use('/api', indexRoutes);
+app.use('/api/noticias', noticiasRoutes);
+app.use('/api/secciones', seccionesRoutes);
 
 // Este folder será usado para almacenar archivos publicos
 app.use('./uploads', express.static(path.resolve('uploads')));

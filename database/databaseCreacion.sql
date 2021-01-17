@@ -38,5 +38,5 @@ CREATE TABLE secciones(
     visible BOOLEAN,
     CONSTRAINT fk_tema
       FOREIGN KEY(id_tema) 
-	  REFERENCES temas(id_tema)
+	  REFERENCES tema(id_tema)
 );

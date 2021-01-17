@@ -1,14 +1,13 @@
-import { pool } from './_database';
+import Noticia from "../models/Noticia";
 import { Request, Response } from 'express';
 
-// OBTENER NOTICIA
-export async function getNoticia(req: Request, res: Response): Promise<Response>{
-    const response = await pool.query('SELECT * FROM noticias;');
-    return res.send(response.rows);
+export async function getNoticias(req: Request, res: Response) {
+    try {
+        const noticias = await Noticia.findAll();
+        res.json({
+            data: noticias
+        });
+    } catch (e) {
+        console.log(e);
+    }
 }
-
-// OBTENER IMAGEN DE NOTICIA
-
-
-
-// -------

@@ -1,16 +1,22 @@
-import { pool } from './_database';
+import Seccion from "../models/Seccion";
 import { Request, Response } from 'express';
+import Tema from "../models/Tema";
 
-// OBTENER SECCIONES
-export async function getSecciones(req: Request, res: Response): Promise<Response>{
-    const response = await pool.query('SELECT * FROM secciones;');
-    return res.send(response.rows);
+export async function getSecciones(req: Request, res: Response) {
+    try {
+        const secciones = await Seccion.findAll({
+            attributes: { exclude: ['id_tema'] },
+            include: [
+                {
+                    model: Tema,
+                    as: 'tema'
+                }
+            ]
+        });
+        res.json({
+            data: secciones
+        });
+    } catch (e) {
+        console.log(e);
+    }
 }
-
-// OBTENER ORDEN
-export async function getSeccionesOrden(req: Request, res: Response): Promise<Response>{
-    const response = await pool.query('SELECT frontend_id FROM secciones WHERE visible=true ORDER BY posicion ASC;');
-    return res.send(response.rows);
-}
-
-// ACTUALIZAR ORDEN
