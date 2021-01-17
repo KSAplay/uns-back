@@ -13,5 +13,4 @@ export async function getSeccionesOrden(req: Request, res: Response): Promise<Re
     return res.send(response.rows);
 }
 
-
 // ACTUALIZAR ORDEN

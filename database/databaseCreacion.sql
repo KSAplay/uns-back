@@ -35,5 +35,8 @@ CREATE TABLE secciones(
     posicion INT,
     nombre VARCHAR(100),
     frontend_id VARCHAR(100),
-    visible BOOLEAN
+    visible BOOLEAN,
+    CONSTRAINT fk_tema
+      FOREIGN KEY(id_tema) 
+	  REFERENCES temas(id_tema)
 );
