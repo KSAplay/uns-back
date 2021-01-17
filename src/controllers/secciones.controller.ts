@@ -8,7 +8,10 @@ export async function getSecciones(req: Request, res: Response): Promise<Respons
 }
 
 // OBTENER ORDEN
-
+export async function getSeccionesOrden(req: Request, res: Response): Promise<Response>{
+    const response = await pool.query('SELECT frontend_id FROM secciones WHERE visible=true ORDER BY posicion ASC;');
+    return res.send(response.rows);
+}
 
 
 // ACTUALIZAR ORDEN

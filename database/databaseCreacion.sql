@@ -5,7 +5,8 @@ CREATE DATABASE uns_db;
 
 /* CREACIÓN DE TABLAS */
 
-CREATE TABLE secciones(
+DROP TABLE IF EXISTS noticias; 
+CREATE TABLE noticias(
     id_noticia SERIAL PRIMARY KEY,
     titular VARCHAR(1024),
     url_imagen VARCHAR(1024),
@@ -15,6 +16,7 @@ CREATE TABLE secciones(
     update_at TIMESTAMP
 );
 
+DROP TABLE IF EXISTS temas; 
 CREATE TABLE temas(
     id_tema SERIAL PRIMARY KEY,
     descripcion VARCHAR(1024),
@@ -24,4 +26,14 @@ CREATE TABLE temas(
     color_btn_carrousel_relleno_activo CHAR(7),
     color_btn_carrousel_borde_activo CHAR(7),
     color_btn_carrousel_borde_inactivo CHAR(7)
+);
+
+DROP TABLE IF EXISTS secciones; 
+CREATE TABLE secciones(
+    id_seccion SERIAL PRIMARY KEY,
+    id_tema SERIAL,
+    posicion INT,
+    nombre VARCHAR(100),
+    frontend_id VARCHAR(100),
+    visible BOOLEAN
 );
