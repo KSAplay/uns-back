@@ -100,20 +100,18 @@ export async function updateSeccionTema(req: Request, res: Response) {
 
 export async function updateSeccionPosicion(req: Request, res: Response) {
 
-    const { previa, actual } = req.body;
+    const { id_seccion, posicion } = req.body;
 
     try {
         const seccion = await Seccion.findOne({
-            where: { posicion: previa }
+            attributes: ['id_seccion', 'posicion'],
+            where: { id_seccion }
         });
         
         const updatedSeccion = await seccion.update({
-            posicion: actual
+            posicion
         });
 
-        const secciones = await Seccion.findAll();
-
- 
         res.json({
             message: 'Updated successfully',
             updatedSeccion
