@@ -8,6 +8,7 @@ const app = express();
 import noticiasRoutes from './routes/noticias.route';
 import seccionesRoutes from './routes/secciones.route';
 import temasRoutes from './routes/temas.route';
+//import comunicadosRoutes from './routes/comunicados.route';
 
 // Configuración
 app.set('port', process.env.PORT || 4000);
@@ -22,6 +23,7 @@ app.use(express.json());
 app.use('/api/noticias', noticiasRoutes);
 app.use('/api/secciones', seccionesRoutes);
 app.use('/api/temas', temasRoutes);
+//app.use('/api/comunicados', /*comunicadosRoutes*/);
 
 // Este folder será usado para almacenar archivos publicos
 app.use('./uploads', express.static(path.resolve('uploads')));
