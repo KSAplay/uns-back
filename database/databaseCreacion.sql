@@ -1,6 +1,7 @@
 
 /* CREACIÓN DE BASE DE DATOS */
 
+DROP DATABASE IF EXISTS uns_db;
 CREATE DATABASE uns_db;
 
 /* CREACIÓN DE TABLAS */
@@ -38,5 +39,5 @@ CREATE TABLE secciones(
     visible BOOLEAN,
     CONSTRAINT fk_tema
       FOREIGN KEY(id_tema) 
-	  REFERENCES tema(id_tema)
+	  REFERENCES temas(id_tema)
 );

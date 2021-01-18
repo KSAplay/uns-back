@@ -9,14 +9,15 @@ INSERT INTO noticias (titular, url_imagen, visible) VALUES
 
 INSERT INTO temas (descripcion, color_titulo, color_fondo, color_flecha_carrousel, 
 color_btn_carrousel_relleno_activo, color_btn_carrousel_borde_activo, color_btn_carrousel_borde_inactivo) VALUES
+    ('Seleccione...','#','#','#','#','#','#'),
     ('Blanco', '#E80035', '#FFFFFF','#E80035', '#E80035', '#E80035', '#767676'),
-    ('Rojo', '#FFFFFF', '#FFFFFF','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'),
-    ('Gris', '#FFFFFF', '#FFFFFF','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF');
+    ('Rojo', '#FFFFFF', '#E80035','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'),
+    ('Gris', '#E80035', '#F5F5F5','#FFFFFF', '#E80035', '#E80035', '#767676');
 
 
 INSERT INTO secciones (id_tema, posicion, nombre, frontend_id, visible) VALUES
-    (1, 0, 'Noticias','NoticiasComponent', true),
-    (1, 1, 'Comunicados','ComunicadosComponent', true),
-    (1, 2, 'Logros','LogrosComponent', true),
-    (1, 3, 'Vinculos','VinculosComponent', true);
+    (2, 0, 'Noticias','NoticiasComponent', true),
+    (3, 1, 'Comunicados','ComunicadosComponent', true),
+    (2, 2, 'Logros','LogrosComponent', true),
+    (4, 3, 'Vinculos','VinculosComponent', true);
 
