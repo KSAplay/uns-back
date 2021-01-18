@@ -4,14 +4,26 @@
 DROP DATABASE IF EXISTS uns_db;
 CREATE DATABASE uns_db;
 
-/* CREACIÓN DE TABLAS */
+/* CREACIÓN DE TABLAS */ 
 
 DROP TABLE IF EXISTS noticias; 
 CREATE TABLE noticias(
     id_noticia SERIAL PRIMARY KEY,
     titular VARCHAR(1024),
-    url_imagen VARCHAR(1024),
     fecha_noticia DATE,
+    visible BOOLEAN,
+    nombre_imagen VARCHAR(1024),
+    host_imagen VARCHAR(1024),
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);
+
+DROP TABLE IF EXISTS comunicados; 
+CREATE TABLE comunicados(
+    id_comunicado SERIAL PRIMARY KEY,
+    nombre_imagen VARCHAR(1024),
+    host_imagen VARCHAR(1024),
+    fecha_comunicado DATE,
     visible BOOLEAN,
     create_at TIMESTAMP,
     update_at TIMESTAMP
@@ -40,4 +52,5 @@ CREATE TABLE secciones(
     CONSTRAINT fk_tema
       FOREIGN KEY(id_tema) 
 	  REFERENCES temas(id_tema)
+      ON DELETE CASCADE
 );
