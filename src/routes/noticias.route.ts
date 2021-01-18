@@ -8,4 +8,6 @@ router.route('/')
     .get(getNoticias);
 
 
+
+
 export default router;
