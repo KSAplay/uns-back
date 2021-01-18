@@ -12,7 +12,7 @@ color_btn_carrousel_relleno_activo, color_btn_carrousel_borde_activo, color_btn_
     ('Seleccione...','#','#','#','#','#','#'),
     ('Blanco', '#E80035', '#FFFFFF','#E80035', '#E80035', '#E80035', '#767676'),
     ('Rojo', '#FFFFFF', '#E80035','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'),
-    ('Gris', '#E80035', '#F5F5F5','#FFFFFF', '#E80035', '#E80035', '#767676');
+    ('Gris', '#E80035', '#F5F5F5','#E80035', '#E80035', '#E80035', '#767676');
 
 
 INSERT INTO secciones (id_tema, posicion, nombre, frontend_id, visible) VALUES
