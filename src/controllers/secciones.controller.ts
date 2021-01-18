@@ -11,6 +11,9 @@ export async function getSecciones(req: Request, res: Response) {
                     model: Tema,
                     as: 'tema'
                 }
+            ],
+            order: [
+                ['posicion', 'ASC']
             ]
         });
         res.json({
