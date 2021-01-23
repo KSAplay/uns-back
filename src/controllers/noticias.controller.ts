@@ -62,14 +62,26 @@ export async function updateNoticia(req: Request, res: Response) {
    
     try {
         const { id_noticia } = req.params;
-        const { titular, fecha_noticia, host_imagen, nombre_imagen } = req.body;
+        const { titular, fecha_noticia, imagen
+           /* , host_imagen, nombre_imagen */
+        } = req.body;
+
         const noticia = await Noticia.findOne({
-            attributes: ['titular','fecha_noticia', 'host_imagen', 'nombre_imagen'],
+            attributes: ['id_noticia','titular','fecha_noticia'
+            /*, 'host_imagen', 'nombre_imagen'*/
+        ],
             where: { id_noticia }
         });
 
+        if(imagen!=null){
+
+            console.log('se ha actualizado macho')
+
+        }
+
         const updatedNoticia = await noticia.update({
-            titular, fecha_noticia, host_imagen, nombre_imagen 
+            titular, fecha_noticia
+            /*, host_imagen, nombre_imagen */
         });
 
         res.json({
