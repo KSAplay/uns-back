@@ -5,7 +5,7 @@ DROP DATABASE IF EXISTS uns_db;
 CREATE DATABASE uns_db;
 
 /* CREACIÓN DE TABLAS */ 
-
+ 
 DROP TABLE IF EXISTS noticias; 
 CREATE TABLE noticias(
     id_noticia SERIAL PRIMARY KEY,

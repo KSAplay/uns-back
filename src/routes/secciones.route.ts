@@ -7,6 +7,9 @@ const router = Router();
 router.route('/')
     .get(getSecciones);
 
+router.route('/orden')
+    .get(getSeccionesOrden);
+
 router.route('/visible')
     .put(updateSeccionVisible);
 
@@ -17,7 +20,6 @@ router.route('/posicion')
     .put(updateSeccionPosicion);
 
 
-router.route('/orden')
-    .get(getSeccionesOrden);
+
 
 export default router;

@@ -10,7 +10,7 @@ export async function getSecciones(req: Request, res: Response) {
                 {
                     model: Tema,
                     as: 'tema'
-                }
+                } 
             ],
             order: [
                 ['posicion', 'ASC']
@@ -47,8 +47,8 @@ export async function getSeccionesOrden(req: Request, res: Response) {
 
 export async function updateSeccionVisible(req: Request, res: Response) {
 
-    const { id_seccion, visible } = req.body;
     try {
+        const { id_seccion, visible } = req.body;
         const seccion = await Seccion.findOne({
             attributes: ['id_seccion', 'visible'],
             where: { id_seccion }
@@ -59,13 +59,13 @@ export async function updateSeccionVisible(req: Request, res: Response) {
         });
 
         res.json({
-            message: 'Updated successfully',
+            message: 'Actualizado satisfactorio',
             updatedSeccion
         });
     } catch (e) {
         console.log(e);
         res.status(500).json({
-            message: 'Something goes wrong',
+            message: 'Algo ha salido mal',
             data: {}
         });
     }
@@ -73,8 +73,9 @@ export async function updateSeccionVisible(req: Request, res: Response) {
 
 export async function updateSeccionTema(req: Request, res: Response) {
 
-    const { id_seccion, id_tema } = req.body;
+    
     try {
+        const { id_seccion, id_tema } = req.body;
         const seccion = await Seccion.findOne({
             attributes: ['id_seccion', 'id_tema'],
             where: { id_seccion }
@@ -85,13 +86,13 @@ export async function updateSeccionTema(req: Request, res: Response) {
         });
 
         res.json({
-            message: 'Updated successfully',
+            message: 'Actualizado satisfactorio',
             updatedSeccion
         });
     } catch (e) {
         console.log(e);
         res.status(500).json({
-            message: 'Something goes wrong',
+            message: 'Algo ha salido mal',
             data: {}
         });
     }
@@ -100,9 +101,8 @@ export async function updateSeccionTema(req: Request, res: Response) {
 
 export async function updateSeccionPosicion(req: Request, res: Response) {
 
-    const { id_seccion, posicion } = req.body;
-
     try {
+        const { id_seccion, posicion } = req.body;
         const seccion = await Seccion.findOne({
             attributes: ['id_seccion', 'posicion'],
             where: { id_seccion }

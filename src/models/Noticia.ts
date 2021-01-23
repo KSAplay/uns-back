@@ -10,7 +10,10 @@ const Noticia = sequelize.define('noticias',{
     titular: {
         type: DataTypes.STRING(1024)
     },
-    url_imagen:{
+    nombre_imagen:{
+        type: DataTypes.STRING(1024)
+    },
+    host_imagen:{
         type: DataTypes.STRING(1024)
     },
     fecha_noticia: {

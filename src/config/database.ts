@@ -14,7 +14,7 @@ export const sequelize = new Sequelize(
             require: 30000,
             idle: 10000
         },
-        logging: true //VER MENSAJES POR CONSOLA
+        logging: false //VER MENSAJES POR CONSOLA
         
     }
     );
