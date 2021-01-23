@@ -28,7 +28,7 @@ app.use('/api/comunicados', comunicadosRoutes);
 //app.use('/api/comunicados', /*comunicadosRoutes*/);
 
 // Este folder será usado para almacenar archivos publicos
-app.use('./uploads', express.static(path.resolve('uploads')));
+app.use('/uploads', express.static(path.resolve('uploads')));
 
 
 export default app;

@@ -54,3 +54,13 @@ CREATE TABLE secciones(
 	  REFERENCES temas(id_tema)
       ON DELETE CASCADE
 );
+
+DROP TABLE IF EXISTS vinculos; 
+CREATE TABLE vinculos(
+    id_vinculo SERIAL PRIMARY KEY,
+    nombre_imagen VARCHAR(1024),
+    host_imagen VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);
