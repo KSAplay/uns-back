@@ -2,6 +2,8 @@ import { Router } from 'express';
 
 import { deleteNoticia, getNoticias, getNoticiasVisibles, getOneNoticia, updateNoticia, updateNoticiaVisible } from '../controllers/noticias.controller';
 
+import multer from '../libs/multer';
+
 const router = Router();
 
 router.route('/')
@@ -12,7 +14,7 @@ router.route('/visibles')
 
 router.route('/:id_noticia')
     .get(getOneNoticia)
-    .put(updateNoticia)
+    .put(multer.single('imagen'),updateNoticia)
     .delete(deleteNoticia);
 
 router.route('/:id_noticia/visible')

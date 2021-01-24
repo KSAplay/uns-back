@@ -1,5 +1,9 @@
 import Noticia from "../models/Noticia";
 import { Request, Response } from 'express';
+import { HOST } from "../shared/var.constant";
+import { getFechaHoraActual } from "../libs/date";
+
+
 
 export async function getNoticias(req: Request, res: Response) {
     try {
@@ -46,7 +50,7 @@ export async function createNoticia(req: Request, res: Response) {
 
         res.json({
             message: 'Creado satisfactorio',
-            data: newNoticia
+            newNoticia
         });
 
     }catch(e){
@@ -62,31 +66,31 @@ export async function updateNoticia(req: Request, res: Response) {
    
     try {
         const { id_noticia } = req.params;
-        const { titular, fecha_noticia, imagen
-           /* , host_imagen, nombre_imagen */
-        } = req.body;
-
+        const { titular, fecha_noticia } = req.body;
+        
+        //console.log('Body JSON- ' + JSON.stringify(req.body) );
+         
+       
         const noticia = await Noticia.findOne({
-            attributes: ['id_noticia','titular','fecha_noticia'
-            /*, 'host_imagen', 'nombre_imagen'*/
+            attributes: ['id_noticia','titular','fecha_noticia', 'host_imagen', 'nombre_imagen', 'update_at'
         ],
             where: { id_noticia }
         });
 
-        if(imagen!=null){
-
-            console.log('se ha actualizado macho')
-
+        if(req.file!=undefined){
+            await noticia.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
         }
 
         const updatedNoticia = await noticia.update({
-            titular, fecha_noticia
-            /*, host_imagen, nombre_imagen */
+            titular, fecha_noticia, update_at: getFechaHoraActual()
         });
 
         res.json({
             message: 'Actualizado satisfactorio',
-            data: updatedNoticia
+            updatedNoticia
         });
     } catch (e) {
         console.log(e);
@@ -141,7 +145,7 @@ export async function updateNoticiaVisible(req: Request, res: Response) {
 
         res.json({
             message: 'Actualizado satisfactorio',
-            data: updatedNoticia
+            updatedNoticia
         });
     } catch (e) {
         console.log(e);
