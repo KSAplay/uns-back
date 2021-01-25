@@ -18,11 +18,3 @@ export const sequelize = new Sequelize(
         
     }
     );
-
-/*export const pool = new Pool({
-    host: 'localhost',
-    user: 'postgres',
-    password: 'root',
-    database: 'uns_db',
-    port: '5432'
-});*/
