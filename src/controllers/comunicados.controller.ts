@@ -41,7 +41,7 @@ export async function createComunicado(req: Request, res: Response) {
     try{
         const { fecha_comunicado } = req.body;
         let newComunicado = await Comunicado.create({
-            fecha_comunicado
+            fecha_comunicado, visible:true
         });
 
         if(req.file!=undefined){

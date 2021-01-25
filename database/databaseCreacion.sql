@@ -64,3 +64,15 @@ CREATE TABLE vinculos(
     create_at TIMESTAMP,
     update_at TIMESTAMP
 );
+
+DROP TABLE IF EXISTS menus; 
+CREATE TABLE menus(
+    id_menu SERIAL PRIMARY KEY,
+    id_parent INT NULL REFERENCES menus(id_menu),
+    nombre VARCHAR(250),
+    orden INT,
+    ruta VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);

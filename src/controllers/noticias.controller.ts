@@ -44,7 +44,7 @@ export async function createNoticia(req: Request, res: Response) {
         const { titular, fecha_noticia } = req.body;
 
         let newNoticia = await Noticia.create({
-            titular,fecha_noticia, visible:true, create_at: getFechaHoraActual(), update_at: getFechaHoraActual()
+            titular,fecha_noticia, visible:true
         });
 
         if(req.file!=undefined){
