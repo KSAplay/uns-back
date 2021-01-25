@@ -40,8 +40,6 @@ export async function createComunicado(req: Request, res: Response) {
         const { fecha_comunicado, host_imagen, nombre_imagen } = req.body;
         let newComunicado = await Comunicado.create({
             fecha_comunicado, host_imagen, nombre_imagen
-        },{
-            fields: ['fecha_comunicado', 'host_imagen', 'nombre_imagen']
         });
 
         res.json({

@@ -1,13 +1,14 @@
 import { Router } from 'express';
 
-import { deleteNoticia, getNoticias, getNoticiasVisibles, getOneNoticia, updateNoticia, updateNoticiaVisible } from '../controllers/noticias.controller';
+import { createNoticia, deleteNoticia, getNoticias, getNoticiasVisibles, getOneNoticia, updateNoticia, updateNoticiaVisible } from '../controllers/noticias.controller';
 
 import multer from '../libs/multer';
 
 const router = Router();
 
 router.route('/')
-    .get(getNoticias);
+    .get(getNoticias)
+    .post(multer.single('imagen'),createNoticia);
 
 router.route('/visibles')
     .get(getNoticiasVisibles);

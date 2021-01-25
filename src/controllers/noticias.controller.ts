@@ -41,12 +41,18 @@ export async function getNoticiasVisibles(req: Request, res: Response) {
 export async function createNoticia(req: Request, res: Response) {
     
     try{
-        const { titular, fecha_noticia, visible, host_imagen, nombre_imagen } = req.body;
+        const { titular, fecha_noticia } = req.body;
+
         let newNoticia = await Noticia.create({
-            titular,fecha_noticia, visible, host_imagen, nombre_imagen
-        },{
-            fields: ['titular','fecha_noticia', 'visible', 'host_imagen', 'nombre_imagen']
+            titular,fecha_noticia, visible:true, create_at: getFechaHoraActual(), update_at: getFechaHoraActual()
         });
+
+        if(req.file!=undefined){
+            await newNoticia.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
+        }
 
         res.json({
             message: 'Creado satisfactorio',
