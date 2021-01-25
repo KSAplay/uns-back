@@ -21,5 +21,4 @@ router.route('/:id_comunicado')
 router.route('/:id_comunicado/visible')
     .put(updateComunicadoVisible);
 
-
 export default router;
