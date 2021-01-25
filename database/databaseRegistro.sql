@@ -1,6 +1,14 @@
 
 /* CREACIÓN DE REGISTROS */
 
+INSERT INTO temas (descripcion, color_titulo, color_fondo, color_flecha_carrousel, 
+color_btn_carrousel_relleno_activo, color_btn_carrousel_borde_activo, color_btn_carrousel_borde_inactivo) VALUES
+    ('Seleccione...','#','#','#','#','#','#'),
+    ('Blanco', '#E80035', '#FFFFFF','#E80035', '#E80035', '#E80035', '#767676'),
+    ('Rojo', '#FFFFFF', '#E80035','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'),
+    ('Gris', '#E80035', '#F5F5F5','#E80035', '#E80035', '#E80035', '#767676');
+
+
 INSERT INTO noticias (titular, fecha_noticia, host_imagen, nombre_imagen, visible, create_at, update_at) VALUES
     ('Uns es la universidad pública con más fondos adjudicados por el ministerio de la producción', '11/01/2021', 'http://www.uns.edu.pe/recursos/noticias','9014114e7b110d9d6734cb8bb98c85e6.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
 ('Docente de la uns gana concurso nacional de investigación de concytec', '16/12/2020', 'http://www.uns.edu.pe/recursos/noticias','0af5760983644ca3c56b519d6f912e80.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
@@ -42,24 +50,17 @@ INSERT INTO comunicados (host_imagen, nombre_imagen, fecha_comunicado, visible, 
     ('http://www.uns.edu.pe/recursos/eventos' ,'b86470463cb553fa656ecf3e04b4bb06.png', '23/11/2020', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 
-INSERT INTO temas (descripcion, color_titulo, color_fondo, color_flecha_carrousel, 
-color_btn_carrousel_relleno_activo, color_btn_carrousel_borde_activo, color_btn_carrousel_borde_inactivo) VALUES
-    ('Seleccione...','#','#','#','#','#','#'),
-    ('Blanco', '#E80035', '#FFFFFF','#E80035', '#E80035', '#E80035', '#767676'),
-    ('Rojo', '#FFFFFF', '#E80035','#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF'),
-    ('Gris', '#E80035', '#F5F5F5','#E80035', '#E80035', '#E80035', '#767676');
-
-
 INSERT INTO secciones (id_tema, posicion, nombre, frontend_id, visible) VALUES
     (2, 0, 'Noticias','NoticiasComponent', true),
     (3, 1, 'Comunicados','ComunicadosComponent', true),
     (2, 2, 'Logros','LogrosComponent', true),
     (4, 3, 'Vinculos','VinculosComponent', true);
 
-INSERT INTO vinculos (host_imagen, nombre_imagen,visible, create_at, update_at) VALUES
-    ('uploads/vinculos' ,'beca-presidente.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('uploads/vinculos' ,'iop.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('uploads/vinculos' ,'pronabec.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('uploads/vinculos' ,'science-direct.png', true,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('uploads/vinculos' ,'sunedu.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-    ('uploads/vinculos' ,'uniBernardo.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+INSERT INTO vinculos (host_imagen, nombre_imagen, visible, create_at, update_at) VALUES
+    ('http://localhost:4000/uploads/vinculos' ,'beca-presidente.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/vinculos' ,'iop.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/vinculos' ,'pronabec.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/vinculos' ,'science-direct.png', true,CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/vinculos' ,'sunedu.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/vinculos' ,'uniBernardo.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
