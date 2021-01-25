@@ -1,30 +1,20 @@
 import Menu from "../models/Menu";
 import { Request, Response } from 'express';
-const { Op } = require("sequelize");
 
 
 
-export async function getMenus(req: Request, res: Response) {
+export async function getMenuOfParent(req: Request, res: Response) {
+
     try {
+
+        const { id_parent } = req.params;
+      
         const menus = await Menu.findAll({
             where:{
-                id_parent: null
+                id_parent: id_parent=='0'? null : id_parent
             },
             order:[
                 ['orden','ASC']
-            ],
-            include: [
-                {
-                    model: Menu,
-                    as: 'children',
-                    include: [
-                        {
-                            model: Menu,
-                            as: 'children'
-                            
-                        } 
-                    ]
-                } 
             ]
             
         });
