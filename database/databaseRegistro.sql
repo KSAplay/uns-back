@@ -10,25 +10,25 @@ color_btn_carrousel_relleno_activo, color_btn_carrousel_borde_activo, color_btn_
 
 
 INSERT INTO noticias (titular, fecha_noticia, host_imagen, nombre_imagen, visible, create_at, update_at) VALUES
-    ('Uns es la universidad pública con más fondos adjudicados por el ministerio de la producción', '11/01/2021', 'http://www.uns.edu.pe/recursos/noticias','9014114e7b110d9d6734cb8bb98c85e6.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
-('Docente de la uns gana concurso nacional de investigación de concytec', '16/12/2020', 'http://www.uns.edu.pe/recursos/noticias','0af5760983644ca3c56b519d6f912e80.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns y Carec suscriben convenio que beneficiará a estudiantes y docentes de energía y mecánica', '16/12/2020', 'http://www.uns.edu.pe/recursos/noticias','e7a26a346d1800fdbcbfbc50bf5824cc.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Egresado de la uns realizó pasantía en argentina', '14/12/2020', 'http://www.uns.edu.pe/recursos/noticias','d1b200a64a4ad6cdd96fc0aed91a9cea.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns renueva edificio de la escuela de posgrado', '11/12/2020', 'http://www.uns.edu.pe/recursos/noticias','30103beac474713c2a51bffa520c63ce.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns inaugura imponente complejo deportivo ', '08/12/2020', 'http://www.uns.edu.pe/recursos/noticias','4c21810ae76c39163d57f163a468eeb0.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Egresados y estudiantes de derecho de la uns organizan primer modelo de naciones unidas en áncash', '12/11/2020', 'http://www.uns.edu.pe/recursos/noticias','7f3f79e0f9fa0cd1d8a216380ba56874.png', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Reconocen a joven por ocupar primer puesto en cómputo general en examen de admisión ordinario ', '12/11/2020', 'http://www.uns.edu.pe/recursos/noticias','def13348b91a21ae202cc369416af4be.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Trabajadores de la uns reciben kit de bioseguridad al retornar a sus labores', '05/10/2020', 'http://www.uns.edu.pe/recursos/noticias','6db5b68cffa9925c8648ac3fcc9479de.49.00%20PM.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns apoya aprobación de ley para creación e implementación del parque científico tecnológico ', '01/10/2020', 'http://www.uns.edu.pe/recursos/noticias','36fa0b2055977de706a9e1f4d0b0c211.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Personal administrativo de la uns es capacitado en el marco de la ejecución del plan covid-19', '28/09/2020', 'http://www.uns.edu.pe/recursos/noticias','2062e9763cd94fff142fffda5d7fc8a5.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Santeña entre los 100 jóvenes líderes en biotecnología de latinoamérica. ', '25/09/2020', 'http://www.uns.edu.pe/recursos/noticias','7891160bb7b9448f510fa8a00495b69c.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Maestristas y doctorandos iniciaron clases virtuales en la uns', '19/09/2020', 'http://www.uns.edu.pe/recursos/noticias','6a577b8081e33d8b3b25fb521bfc8694.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Primera sustentación virtual de informe final de tesis en la uns', '31/07/2020', 'http://www.uns.edu.pe/recursos/noticias','da84e842a81111c0bc9910a8f5080f1a.png', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Rector reconoció labor de docentes de la uns, quienes ante la emergencia sanitaria se adaptaron', '10/07/2020', 'http://www.uns.edu.pe/recursos/noticias','7a5939a7d9035970470ec4c6d9c05d16.01.15%20PM%20(2).jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns entregó dispositivos de internet móvil a sus estudiantes de bajos recursos económicos', '17/06/2020', 'http://www.uns.edu.pe/recursos/noticias','033fc6553810938d7215a7c28106d18c.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Ministro de educación felicita a la uns por ofrecer servicio educativo no presencial', '01/06/2020', 'http://www.uns.edu.pe/recursos/noticias','9014114e7b110d9d6734cb8bb98c85e6.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Enfermero egresado de la uns integra brigada de ayuda a loretanos ', '23/05/2020', 'http://www.uns.edu.pe/recursos/noticias','33ce8cd3e3a0f1033c78c2153a1953a5.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-('Uns prestará equipo de biología molecular al minsa para pruebas de covid-19', '30/04/2020', 'http://www.uns.edu.pe/recursos/noticias','7f203cc535beda85efacc6a3c29335b9.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+    ('UNS es la universidad pública con más fondos adjudicados por el ministerio de la producción.', '11/01/2021', 'http://www.uns.edu.pe/recursos/noticias','9014114e7b110d9d6734cb8bb98c85e6.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('Docente de la uns gana concurso nacional de investigación de CONCYTEC.', '16/12/2020', 'http://www.uns.edu.pe/recursos/noticias','0af5760983644ca3c56b519d6f912e80.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS y CAREC suscriben convenio que beneficiará a estudiantes y docentes de Energía y Mecánica.', '16/12/2020', 'http://www.uns.edu.pe/recursos/noticias','e7a26a346d1800fdbcbfbc50bf5824cc.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Egresado de la uns realizó pasantía en Argentina.', '14/12/2020', 'http://www.uns.edu.pe/recursos/noticias','d1b200a64a4ad6cdd96fc0aed91a9cea.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS renueva edificio de la escuela de Posgrado.', '11/12/2020', 'http://www.uns.edu.pe/recursos/noticias','30103beac474713c2a51bffa520c63ce.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS inaugura imponente Complejo Deportivo.', '08/12/2020', 'http://www.uns.edu.pe/recursos/noticias','4c21810ae76c39163d57f163a468eeb0.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Egresados y estudiantes de Derecho de la UNS organizan primer modelo de Naciones Unidas en Áncash.', '12/11/2020', 'http://www.uns.edu.pe/recursos/noticias','7f3f79e0f9fa0cd1d8a216380ba56874.png', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Reconocen a joven por ocupar primer puesto en cómputo general en Exámen de Admisión Ordinario.', '12/11/2020', 'http://www.uns.edu.pe/recursos/noticias','def13348b91a21ae202cc369416af4be.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Trabajadores de la UNS reciben kit de bioseguridad al retornar a sus labores.', '05/10/2020', 'http://www.uns.edu.pe/recursos/noticias','6db5b68cffa9925c8648ac3fcc9479de.49.00%20PM.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS apoya aprobación de ley para creación e implementación del Parque Científico Tecnológico.', '01/10/2020', 'http://www.uns.edu.pe/recursos/noticias','36fa0b2055977de706a9e1f4d0b0c211.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Personal administrativo de la UNS es capacitado en el marco de la ejecución del plan COVID-19.', '28/09/2020', 'http://www.uns.edu.pe/recursos/noticias','2062e9763cd94fff142fffda5d7fc8a5.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Santeña entre los 100 jóvenes líderes en biotecnología de latinoamérica.', '25/09/2020', 'http://www.uns.edu.pe/recursos/noticias','7891160bb7b9448f510fa8a00495b69c.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Maestristas y doctorandos iniciaron clases virtuales en la UNS.', '19/09/2020', 'http://www.uns.edu.pe/recursos/noticias','6a577b8081e33d8b3b25fb521bfc8694.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Primera sustentación virtual de informe final de tesis en la UNS.', '31/07/2020', 'http://www.uns.edu.pe/recursos/noticias','da84e842a81111c0bc9910a8f5080f1a.png', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Rector reconoció labor de docentes de la UNS, quienes ante la emergencia sanitaria se adaptaron.', '10/07/2020', 'http://www.uns.edu.pe/recursos/noticias','7a5939a7d9035970470ec4c6d9c05d16.01.15%20PM%20(2).jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS entregó dispositivos de internet móvil a sus estudiantes de bajos recursos económicos.', '17/06/2020', 'http://www.uns.edu.pe/recursos/noticias','033fc6553810938d7215a7c28106d18c.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ministro de Educación felicita a la UNS por ofrecer servicio educativo no presencial.', '01/06/2020', 'http://www.uns.edu.pe/recursos/noticias','9014114e7b110d9d6734cb8bb98c85e6.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Enfermero egresado de la UNS integra brigada de ayuda a loretanos.', '23/05/2020', 'http://www.uns.edu.pe/recursos/noticias','33ce8cd3e3a0f1033c78c2153a1953a5.jpg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('UNS prestará equipo de biología molecular al MINSA para pruebas de COVID-19.', '30/04/2020', 'http://www.uns.edu.pe/recursos/noticias','7f203cc535beda85efacc6a3c29335b9.jpeg', true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 
 INSERT INTO comunicados (host_imagen, nombre_imagen, fecha_comunicado, visible, create_at, update_at) VALUES
