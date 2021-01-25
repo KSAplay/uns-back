@@ -1,5 +1,7 @@
 import Comunicado from "../models/Comunicado";
 import { Request, Response } from 'express';
+import { HOST } from "../shared/var.constant";
+import { getFechaHoraActual } from "../libs/date";
 
 export async function getComunicados(req: Request, res: Response) {
     try {
@@ -37,10 +39,17 @@ export async function getComunicadosVisibles(req: Request, res: Response) {
 export async function createComunicado(req: Request, res: Response) {
     
     try{
-        const { fecha_comunicado, host_imagen, nombre_imagen } = req.body;
+        const { fecha_comunicado } = req.body;
         let newComunicado = await Comunicado.create({
-            fecha_comunicado, host_imagen, nombre_imagen
+            fecha_comunicado
         });
+
+        if(req.file!=undefined){
+            await newComunicado.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
+        }
 
         res.json({
             message: 'Creado satisfactorio',
@@ -60,14 +69,22 @@ export async function updateComunicado(req: Request, res: Response) {
    
     try {
         const { id_comunicado } = req.params;
-        const { fecha_comunicado, host_imagen, nombre_imagen  } = req.body;
+        const { fecha_comunicado } = req.body;
+
         const comunicado = await Comunicado.findOne({
-            attributes: ['fecha_comunicado', 'host_imagen', 'nombre_imagen'],
+            attributes: ['id_comunicado','fecha_comunicado', 'host_imagen', 'nombre_imagen','update_at'],
             where: { id_comunicado }
         });
 
+        if(req.file!=undefined){
+            await comunicado.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
+        }
+
         const updatedComunicado = await comunicado.update({
-            fecha_comunicado, host_imagen, nombre_imagen 
+            fecha_comunicado, update_at: getFechaHoraActual()
         });
 
         res.json({
