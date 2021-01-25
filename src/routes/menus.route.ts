@@ -1,12 +1,12 @@
 import { Router } from 'express';
 
-import { getMenus} from '../controllers/menus.controller';
+import { getMenuOfParent} from '../controllers/menus.controller';
 
 
 
 const router = Router();
 
-router.route('/')
-    .get(getMenus);
+router.route('/parent/:id_parent')
+    .get(getMenuOfParent);
 
 export default router;

@@ -36,7 +36,7 @@ const Menu = sequelize.define('menus',{
 );
 
 Menu.hasMany(Menu,{as: 'children',foreignKey: 'id_parent',sourceKey: 'id_menu'});
-//Menu.belongsTo(Menu, {foreignKey:'id_menu', sourceKey: 'id_parent'});
+Menu.belongsTo(Menu, {as: 'data',foreignKey:'id_menu', sourceKey: 'id_parent'});
 
 
 export default Menu;
