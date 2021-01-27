@@ -2,6 +2,8 @@
 // ----------------------------- IMPORTS --------------------------------
 import Vinculo from "../models/Vinculo";
 import { Request, Response } from 'express';
+import { HOST } from "../shared/var.constant";
+import { getFechaHoraActual } from "../libs/date";
 // ----------------------------------------------------------------------
 
 // -----------------------------------------------------------------------
@@ -10,7 +12,11 @@ import { Request, Response } from 'express';
 // -----------------------------------------------------------------------
 export async function getVinculos(req: Request, res: Response) {
     try {
-        const vinculos = await Vinculo.findAll();
+        const vinculos = await Vinculo.findAll({
+            order:[
+                ['id_vinculo','DESC']
+            ]
+        });
         res.json({
             data: vinculos
         });
@@ -29,7 +35,7 @@ export async function getVinculosVisibles(req: Request, res: Response) {
                 visible: true
             },
             order:[
-                ['create_at','DESC']
+                ['id_vinculo','DESC']
             ]
         });
         res.json({
@@ -45,12 +51,16 @@ export async function getVinculosVisibles(req: Request, res: Response) {
 export async function createVinculo(req: Request, res: Response) {
     
     try{
-        const { host_imagen, nombre_imagen } = req.body;
         let newVinculo = await Vinculo.create({
-            host_imagen, nombre_imagen
-        },{
-            fields: ['host_imagen', 'nombre_imagen']
+            visible: true
         });
+
+        if(req.file!=undefined){
+            await newVinculo.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
+        }
 
         res.json({
             message: 'Creado satisfactorio',
@@ -72,14 +82,21 @@ export async function updateVinculo(req: Request, res: Response) {
    
     try {
         const { id_vinculo } = req.params;
-        const { host_imagen, nombre_imagen } = req.body;
+
         const vinculo = await Vinculo.findOne({
-            attributes: ['host_imagen', 'nombre_imagen'],
+            attributes: ['id_vinculo','host_imagen', 'nombre_imagen','update_at'],
             where: { id_vinculo }
         });
 
+        if(req.file!=undefined){
+            await vinculo.update({
+                nombre_imagen:req.file.filename, 
+                host_imagen:`${HOST}/${req.file.destination}`
+             });
+        }
+
         const updatedVinculo = await vinculo.update({
-            host_imagen, nombre_imagen
+            update_at: getFechaHoraActual()
         });
 
         res.json({
@@ -135,7 +152,7 @@ export async function updateVinculoVisible(req: Request, res: Response) {
         const { id_vinculo } = req.params;
         const { visible } = req.body;
         const vinculo = await Vinculo.findOne({
-            attributes: ['id_comunicado', 'visible'],
+            attributes: ['id_vinculo', 'visible'],
             where: { id_vinculo }
         });
 
