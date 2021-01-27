@@ -1,6 +1,6 @@
 import { Router } from 'express';
 
-import { getMenuOfParent, isNodoFinal} from '../controllers/menus.controller';
+import { getMenuOfParent, updateMenuVisible} from '../controllers/menus.controller';
 
 
 
@@ -9,7 +9,7 @@ const router = Router();
 router.route('/parent/:id_parent')
     .get(getMenuOfParent);
 
-router.route('/isnodofinal/:id_menu')
-    .get(isNodoFinal);
+router.route('/:id_menu/visible')
+    .put(updateMenuVisible);
 
 export default router;

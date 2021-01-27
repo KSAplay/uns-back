@@ -1,6 +1,6 @@
 import Menu from "../models/Menu";
 import { Request, Response } from 'express';
-const { Op } = require("sequelize");
+import { sequelize } from "../config/database";
 
 
 
@@ -17,7 +17,15 @@ export async function getMenuOfParent(req: Request, res: Response) {
             },
             order:[
                 ['orden','ASC']
-            ]
+            ],
+            attributes:{
+                include: [
+                    [
+                      sequelize.literal(`(SELECT count(*)
+                      FROM menus as menu where menu.id_parent = menus.id_menu)`),'numero_hijos'
+                    ]
+                ]
+            }
             
         });
         res.json({
@@ -28,23 +36,31 @@ export async function getMenuOfParent(req: Request, res: Response) {
     }
 }
 
-export async function isNodoFinal(req: Request, res: Response) {
 
+
+export async function updateMenuVisible(req: Request, res: Response) {
+    
     try {
-
         const { id_menu } = req.params;
-        const conteo =await Menu.count({
-            where: {
-                id_parent: {
-                    [Op.eq]: id_menu
-                  }
-            }
-          });
+        const { visible } = req.body;
+        const menu = await Menu.findOne({
+            attributes: ['id_menu', 'visible'],
+            where: { id_menu }
+        });
+
+        const updatedMenu = await menu.update({
+            visible
+        });
 
         res.json({
-            isNodoFinal: conteo == 0
+            message: 'Actualizado satisfactorio',
+            updatedMenu
         });
     } catch (e) {
         console.log(e);
-    }
+        res.status(500).json({
+            message: 'Algo ha salido mal',
+            data: {}
+        });
+    }   
 }
