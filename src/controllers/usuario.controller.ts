@@ -11,16 +11,17 @@ export async function iniciarSession(req: Request, res: Response, next:NextFunct
         
         if(usuario===null) throw {message: `Usuario no registrado`}  
      
-        /*
-        ComparePassword(usuario.dataValues.password, password, (error:any, esCorrecto:Boolean) => {
-            
-            //if(result) throw {message: "Hubo un error mientras se autenticaba, intentar más tarde"}
-            
-            if(result === false) throw {message: "email y/o password son inválidas"}
-            delete usuario.dataValues.password
-            res.json( usuario.dataValues );
-            
-        })*/
+        
+        const result = await ComparePassword(usuario.dataValues.password, password)
+        
+         if (result === false)
+                throw { message: "email y/o password son inválidas" };
+            delete usuario.dataValues.password;
+            res.json(usuario.dataValues);
+           
+        
+
+       
 
        
     } catch (e) {        
