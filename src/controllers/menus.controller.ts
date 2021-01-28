@@ -1,16 +1,17 @@
 import Menu from "../models/Menu";
 import { Request, Response } from 'express';
 import { sequelize } from "../config/database";
+const { Op } = require("sequelize");
 
 
 export async function getMenus(req: Request, res: Response) {
     try {
         const menus = await Menu.findAll({
-            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
+            attributes: { exclude: ['create_at','update_at','visible','id_parent'] },
             include: [
                 {
                     model: Menu,
-                    attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
+                    attributes: { exclude: ['create_at','update_at','visible','id_parent'] },
                     as: 'children',
                      where: {
                         visible: true
@@ -18,7 +19,7 @@ export async function getMenus(req: Request, res: Response) {
                     include: [
                         {
                             model: Menu,
-                            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
+                            attributes: { exclude: ['create_at','update_at','visible','id_parent'] },
                             as: 'children',
                             where: {
                                 visible: true
@@ -187,4 +188,38 @@ export async function updateMenuPosicion(req: Request, res: Response) {
         });
     }
 
+}
+
+
+
+export async function createMenu(req: Request, res: Response) {
+    
+    try{
+        const { id_parent, nombre, ruta } = req.body;
+
+        let newMenu = await Menu.create({
+            id_parent,nombre, ruta, visible:true, 
+            orden : await Menu.count({
+                where: {
+                  id_parent: {
+                    [Op.eq] : id_parent
+                  }
+                }
+              })  +1
+                
+        });
+
+
+        res.json({
+            message: 'Creado satisfactorio',
+            newMenu
+        });
+
+    }catch(e){
+        console.log(e);
+        res.status(500).json({
+            message: 'Algo ha salido mal',
+            data: {}
+        });
+    }
 }

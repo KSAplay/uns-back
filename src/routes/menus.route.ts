@@ -1,13 +1,14 @@
 import { Router } from 'express';
 
-import { deleteMenu, getMenuOfParent, getMenus, updateMenuNombre, updateMenuPosicion, updateMenuVisible} from '../controllers/menus.controller';
+import { createMenu, deleteMenu, getMenuOfParent, getMenus, updateMenuNombre, updateMenuPosicion, updateMenuVisible} from '../controllers/menus.controller';
 
 
 
 const router = Router();
 
 router.route('/')
-    .get(getMenus);
+    .get(getMenus)
+    .post(createMenu);
 
 router.route('/:id_menu')
     .delete(deleteMenu);
