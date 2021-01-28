@@ -86,7 +86,7 @@ INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at)
     ('Ingenieria civil',5, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 INSERT INTO usuarios (nombres, apellidos, email, password, visible, create_at, update_at) VALUES
-    ('Kenny Anthony' ,'Saavedra Altuna', 'ksamusic@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Andres Saúl','Medina Charcape','charcapito@uns.edu.pe','$2b$10$k9xQ7J4CsNflX9jfhcL7ZuvGuELMBPTFBByPkdKP0by8U1p8mKysC', True, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Diego Fernando' ,'Baes Vásquez', 'diegobaesv@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Carlos Alberto','Villar Marin','carlosvm@uns.edu.pe','$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+    ('Kenny' ,'Saavedra Altuna', 'ksamusic@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Andres','Medina Charcape','charcapito@uns.edu.pe','$2b$10$k9xQ7J4CsNflX9jfhcL7ZuvGuELMBPTFBByPkdKP0by8U1p8mKysC', True, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Diego' ,'Baes Vásquez', 'diegobaesv@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Carlos','Villar Marin','carlosvm@uns.edu.pe','$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);

@@ -9,23 +9,15 @@ const encriptar_helper_1 = require("../Helpers/encriptar.helper");
 async function iniciarSession(req, res, next) {
     try {
         const { email, password } = req.body;
-        const usuario = await Usuario_1.default.findOne({
-            attributes: ['email', 'password'],
-            where: { email }
-        });
+        const usuario = await Usuario_1.default.findOne({ where: { email } });
         if (usuario === null)
             throw { message: `Usuario no registrado` };
-        console.log(typeof (usuario.dataValues.password));
-        console.log(password);
-        encriptar_helper_1.ComparePassword(usuario.dataValues.password, password, (error, esCorrecto) => {
-            console.log(error);
-            console.log(esCorrecto);
-            if (error)
-                throw { message: "Hubo un error mientras se autenticaba, intentar más tarde" };
-            if (!esCorrecto)
+        await encriptar_helper_1.ComparePassword(usuario.dataValues.password, password).then(result => {
+            //if(result) throw {message: "Hubo un error mientras se autenticaba, intentar más tarde"}
+            if (result === false)
                 throw { message: "email y/o password son inválidas" };
             delete usuario.dataValues.password;
-            res.json(usuario.dataValues);
+            res.json(usuario);
         });
     }
     catch (e) {
