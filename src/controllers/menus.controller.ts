@@ -3,6 +3,50 @@ import { Request, Response } from 'express';
 import { sequelize } from "../config/database";
 
 
+export async function getMenus(req: Request, res: Response) {
+    try {
+        const menus = await Menu.findAll({
+            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+            include: [
+                {
+                    model: Menu,
+                    attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+                    as: 'children',
+                    order:[
+                        ['orden','ASC']
+                    ],
+                    where: {
+                        visible: true
+                    },
+                    include: [
+                        {
+                            model: Menu,
+                            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+                            as: 'children',
+                            order:[
+                                ['orden','ASC']
+                            ],where: {
+                                visible: true
+                            }
+                        }
+                    ]
+                }
+            ],
+            order:[
+                ['orden','ASC']
+            ],
+            where: {
+                id_parent: null,
+                visible: true
+            }
+        });
+        res.json({
+            data: menus
+        });
+    } catch (e) {
+        console.log(e);
+    }
+}
 
 export async function getMenuOfParent(req: Request, res: Response) {
 
@@ -117,7 +161,7 @@ export async function updateMenuPosicion(req: Request, res: Response) {
         const { orden } = req.body;
 
         const menu = await Menu.findOne({
-            attributes: ['id_menu', 'posicion'],
+            attributes: ['id_menu', 'orden'],
             where: { id_menu }
         });
         

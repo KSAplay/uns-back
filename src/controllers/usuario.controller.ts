@@ -2,6 +2,7 @@ import Usuario from "../models/Usuario";
 import { NextFunction, Request, Response } from 'express';
 import { CodificarPassword, ComparePassword } from '../Helpers/encriptar.helper';
 
+
 export async function iniciarSession(req: Request, res: Response, next:NextFunction) {
     try {
         const { email, password } = req.body;
@@ -18,7 +19,7 @@ export async function iniciarSession(req: Request, res: Response, next:NextFunct
         console.log(typeof(usuario.dataValues.password))
         console.log(password)
      
-        
+        /*
         ComparePassword(usuario.dataValues.password, password, (error:any, esCorrecto:Boolean) => {
             
             console.log(error)
@@ -30,7 +31,7 @@ export async function iniciarSession(req: Request, res: Response, next:NextFunct
             delete usuario.dataValues.password
             res.json( usuario.dataValues );
             
-        })
+        })*/
 
        
     } catch (e) {        
@@ -38,6 +39,8 @@ export async function iniciarSession(req: Request, res: Response, next:NextFunct
        
     }
 }
+
+
 
 export async function registrarUsuario(req: Request, res: Response, next:NextFunction) {
     try {
