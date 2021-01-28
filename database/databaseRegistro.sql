@@ -65,6 +65,11 @@ INSERT INTO vinculos (host_imagen, nombre_imagen, visible, create_at, update_at)
     ('http://localhost:4000/uploads/vinculos' ,'sunedu.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
     ('http://localhost:4000/uploads/vinculos' ,'uniBernardo.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
+INSERT INTO sliders (host_imagen, nombre_imagen, visible, create_at, update_at) VALUES
+    ('http://localhost:4000/uploads/sliders' ,'nubes.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/sliders' ,'uns.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP),
+    ('http://localhost:4000/uploads/sliders' ,'judo.jpg', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
 INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at) VALUES  
 ('Admision',null, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
 ('Facultades',null, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),

@@ -76,3 +76,25 @@ CREATE TABLE menus(
     create_at TIMESTAMP,
     update_at TIMESTAMP
 );
+
+DROP TABLE IF EXISTS usuarios; 
+CREATE TABLE usuarios(
+    id_usuario SERIAL PRIMARY KEY,
+    nombres VARCHAR(1024),
+    apellidos VARCHAR(1024),
+    email VARCHAR(1024),
+    password VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);
+
+DROP TABLE IF EXISTS sliders; 
+CREATE TABLE sliders(
+    id_slider SERIAL PRIMARY KEY,
+    nombre_imagen VARCHAR(1024),
+    host_imagen VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);

@@ -4,7 +4,7 @@ const { Sequelize } = require('sequelize');
 export const sequelize = new Sequelize(
     'uns_db', //db_name
     'postgres', //username
-    'root', //password
+    'charcape', //password
     {
         host: 'localhost',
         dialect: 'postgres', 
