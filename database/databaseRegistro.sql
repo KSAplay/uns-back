@@ -85,3 +85,10 @@ INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at)
     ('Ingenieria de sistemas',5, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
     ('Ingenieria civil',5, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
+<<<<<<< HEAD
+INSERT INTO usuarios (nombes, apellidos, email, password, visible, create_at, update_at) VALUES
+    ('Kenny' ,'Altuna', 'yosoykenny', "$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy" true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Diego' ,'Baes', 'elbaes', "$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy", true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+=======
+>>>>>>> 23411ac4056d8c3efdca447ad015e8421fae7003
