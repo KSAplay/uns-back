@@ -84,6 +84,11 @@ CREATE TABLE usuarios(
     apellidos VARCHAR(1024),
     email VARCHAR(1024),
     password VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);
+
 DROP TABLE IF EXISTS sliders; 
 CREATE TABLE sliders(
     id_slider SERIAL PRIMARY KEY,
