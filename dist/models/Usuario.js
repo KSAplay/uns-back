@@ -11,7 +11,7 @@ const Usuario = sequelize.define('usuarios', {
     nombres: {
         type: DataTypes.STRING(1024)
     },
-    pellidos: {
+    apellidos: {
         type: DataTypes.STRING(1024)
     },
     email: {

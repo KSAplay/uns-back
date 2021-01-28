@@ -16,6 +16,7 @@ const comunicados_route_1 = __importDefault(require("./routes/comunicados.route"
 const vinculos_route_1 = __importDefault(require("./routes/vinculos.route"));
 const menus_route_1 = __importDefault(require("./routes/menus.route"));
 const usuarios_route_1 = __importDefault(require("./routes/usuarios.route"));
+const sliders_route_1 = __importDefault(require("./routes/sliders.route"));
 // Configuración
 app.set('port', process.env.PORT || 4000);
 // middlewares
@@ -25,6 +26,7 @@ app.use(express_1.default.json());
 //app.use(bodyParser.urlencoded({ extended: true })); 
 //app.use(express.urlencoded({ extended: true }))
 // routes
+app.use('/api/sliders', sliders_route_1.default);
 app.use('/api/noticias', noticias_route_1.default);
 app.use('/api/secciones', secciones_route_1.default);
 app.use('/api/temas', temas_route_1.default);

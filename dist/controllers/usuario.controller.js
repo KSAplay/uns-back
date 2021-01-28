@@ -9,20 +9,23 @@ const encriptar_helper_1 = require("../Helpers/encriptar.helper");
 async function iniciarSession(req, res, next) {
     try {
         const { email, password } = req.body;
-        console.log(email);
-        console.log(password);
         const usuario = await Usuario_1.default.findOne({
+            attributes: ['email', 'password'],
             where: { email }
         });
-        if (!email)
-            throw `Usuario no registrado`;
-        encriptar_helper_1.ComparePassword(usuario.password, password, (error, esCorrecto) => {
+        if (usuario === null)
+            throw { message: `Usuario no registrado` };
+        console.log(typeof (usuario.dataValues.password));
+        console.log(password);
+        encriptar_helper_1.ComparePassword(usuario.dataValues.password, password, (error, esCorrecto) => {
+            console.log(error);
+            console.log(esCorrecto);
             if (error)
-                throw "Hubo un error mientras se autenticaba, intentar más tarde";
+                throw { message: "Hubo un error mientras se autenticaba, intentar más tarde" };
             if (!esCorrecto)
-                throw "email y/o password son inválidas";
-            delete usuario.password;
-            res.json(usuario);
+                throw { message: "email y/o password son inválidas" };
+            delete usuario.dataValues.password;
+            res.json(usuario.dataValues);
         });
     }
     catch (e) {
@@ -33,10 +36,10 @@ exports.iniciarSession = iniciarSession;
 async function registrarUsuario(req, res, next) {
     try {
         const { nombres, apellidos, email, password } = req.body;
-        const usuario = await Usuario_1.default.findOne({ email });
+        const usuario = await Usuario_1.default.findOne({ where: { email } });
         if (usuario)
             throw "Existe una cuenta registrada con este email";
-        encriptar_helper_1.CodificarPassword(password, (error, password) => {
+        encriptar_helper_1.CodificarPassword(password, async (error, password) => {
             if (error)
                 throw "Hubo un error mientras se registraba, intentar mas tarde";
             let nuevoUsuario = Usuario_1.default.create({

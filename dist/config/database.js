@@ -5,7 +5,7 @@ const { Sequelize } = require('sequelize');
 // Option 1: Passing a connection URI
 exports.sequelize = new Sequelize('uns_db', //db_name
 'postgres', //username
-'root', //password
+'charcape', //password
 {
     host: 'localhost',
     dialect: 'postgres',

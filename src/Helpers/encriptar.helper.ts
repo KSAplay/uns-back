@@ -1,13 +1,13 @@
 import bcrypt from 'bcrypt';
-export function ComparePassword(actual: string, candidato:String, llamadaAtras: Function ) {
-    return bcrypt.compare(candidato, actual);
+export async function ComparePassword(actual: string, candidato:string) {
+    return await bcrypt.compare(candidato, actual);
 } 
-export function CodificarPassword(actual: String, llamadaAtras: Function) {
+export async function CodificarPassword(actual: String, llamadaAtras: Function) {
     bcrypt.genSalt(5, (error, salt) => {
         if(error) return llamadaAtras(error)
-        bcrypt.hash(actual, salt, (error, hash) => {
+        bcrypt.hash(actual, salt, async (error, hash) => {
             if(error) return llamadaAtras(error)
-            return llamadaAtras(undefined, hash)
+            return await llamadaAtras(undefined, hash)
         });
     });
 }
