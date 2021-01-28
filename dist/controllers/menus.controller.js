@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.updateMenuVisible = exports.getMenuOfParent = void 0;
+exports.updateMenuPosicion = exports.updateMenuNombre = exports.deleteMenu = exports.updateMenuVisible = exports.getMenuOfParent = void 0;
 const Menu_1 = __importDefault(require("../models/Menu"));
 const database_1 = require("../config/database");
 async function getMenuOfParent(req, res) {
@@ -59,3 +59,70 @@ async function updateMenuVisible(req, res) {
     }
 }
 exports.updateMenuVisible = updateMenuVisible;
+async function deleteMenu(req, res) {
+    try {
+        const { id_menu } = req.params;
+        await Menu_1.default.destroy({
+            where: {
+                id_menu
+            }
+        });
+        res.json({
+            message: 'Eliminado satisfactorio'
+        });
+    }
+    catch (e) {
+        console.log(e);
+    }
+}
+exports.deleteMenu = deleteMenu;
+async function updateMenuNombre(req, res) {
+    try {
+        const { id_menu } = req.params;
+        const { nombre } = req.body;
+        const menu = await Menu_1.default.findOne({
+            attributes: ['id_menu', 'nombre'],
+            where: { id_menu }
+        });
+        const updatedMenu = await menu.update({
+            nombre
+        });
+        res.json({
+            message: 'Actualizado satisfactorio',
+            updatedMenu
+        });
+    }
+    catch (e) {
+        console.log(e);
+        res.status(500).json({
+            message: 'Algo ha salido mal',
+            data: {}
+        });
+    }
+}
+exports.updateMenuNombre = updateMenuNombre;
+async function updateMenuPosicion(req, res) {
+    try {
+        const { id_menu } = req.params;
+        const { orden } = req.body;
+        const menu = await Menu_1.default.findOne({
+            attributes: ['id_menu', 'posicion'],
+            where: { id_menu }
+        });
+        const updatedMenu = await menu.update({
+            orden
+        });
+        res.json({
+            message: 'Updated successfully',
+            updatedMenu
+        });
+    }
+    catch (e) {
+        console.log(e);
+        res.status(500).json({
+            message: 'Something goes wrong',
+            data: {}
+        });
+    }
+}
+exports.updateMenuPosicion = updateMenuPosicion;
