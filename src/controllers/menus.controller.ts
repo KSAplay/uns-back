@@ -6,26 +6,21 @@ import { sequelize } from "../config/database";
 export async function getMenus(req: Request, res: Response) {
     try {
         const menus = await Menu.findAll({
-            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
             include: [
                 {
                     model: Menu,
-                    attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+                    attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
                     as: 'children',
-                    order:[
-                        ['orden','ASC']
-                    ],
-                    where: {
+                     where: {
                         visible: true
                     },
                     include: [
                         {
                             model: Menu,
-                            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent','orden'] },
+                            attributes: { exclude: ['id_menu','create_at','update_at','visible','id_parent'] },
                             as: 'children',
-                            order:[
-                                ['orden','ASC']
-                            ],where: {
+                            where: {
                                 visible: true
                             }
                         }
@@ -33,7 +28,17 @@ export async function getMenus(req: Request, res: Response) {
                 }
             ],
             order:[
-                ['orden','ASC']
+                [ 'orden','ASC'],
+                [
+                    {model: Menu, as: 'children' },
+                    'orden','ASC'
+                ],
+                [
+                    {model: Menu, as: 'children' },
+                    {model: Menu, as: 'children'},
+                    'orden','ASC'
+                ]
+
             ],
             where: {
                 id_parent: null,
