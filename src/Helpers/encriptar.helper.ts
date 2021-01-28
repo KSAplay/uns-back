@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcrypt';
 export function ComparePassword(actual: string, candidato:String, llamadaAtras: Function ) {
     return bcrypt.compare(candidato, actual);
 } 
@@ -10,4 +10,4 @@ export function CodificarPassword(actual: String, llamadaAtras: Function) {
             return llamadaAtras(undefined, hash)
         });
     });
-} 
+}

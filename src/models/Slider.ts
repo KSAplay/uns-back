@@ -1,27 +1,20 @@
 const { Sequelize, DataTypes } = require('sequelize');
 const { sequelize } = require('../config/database')
 
-const Usuario = sequelize.define('usuarios',{
-    id_usuario: {
+const Slider = sequelize.define('sliders',{
+    id_slider: {
         type: DataTypes.INTEGER,
         primaryKey: true,
-        autoIncrement: true 
+        autoIncrement: true // Automatically gets converted to SERIAL for postgres
     },
-    nombres: {
+    nombre_imagen:{
         type: DataTypes.STRING(1024)
     },
-    apellidos:{
-        type: DataTypes.STRING(1024)
-    },
-    email: {
-        type: DataTypes.STRING(1024)
-    },
-    password: {
+    host_imagen:{
         type: DataTypes.STRING(1024)
     },
     visible: {
-        type: DataTypes.BOOLEAN,
-        defaultValue: Sequelize.TRUE 
+        type: DataTypes.BOOLEAN 
     },
     create_at:{
         type: DataTypes.DATE,
@@ -36,4 +29,4 @@ const Usuario = sequelize.define('usuarios',{
 }
 );
 
-export default Usuario;
+export default Slider;

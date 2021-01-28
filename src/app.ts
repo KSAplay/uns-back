@@ -14,6 +14,7 @@ import comunicadosRoutes from './routes/comunicados.route';
 import vinculosRoutes from './routes/vinculos.route';
 import menusRoutes from './routes/menus.route';
 import usuarioRoutes from './routes/usuarios.route';
+import slidersRoutes from './routes/sliders.route';
 
 // Configuración
 app.set('port', process.env.PORT || 4000);
@@ -28,6 +29,7 @@ app.use(express.json());
 //app.use(express.urlencoded({ extended: true }))
 
 // routes
+app.use('/api/sliders', slidersRoutes);
 app.use('/api/noticias', noticiasRoutes);
 app.use('/api/secciones', seccionesRoutes);
 app.use('/api/temas', temasRoutes);
