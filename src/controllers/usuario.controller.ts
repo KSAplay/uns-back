@@ -7,27 +7,16 @@ export async function iniciarSession(req: Request, res: Response, next:NextFunct
     try {
         const { email, password } = req.body;
        
+        const usuario = await Usuario.findOne({ where: { email }});
         
-        const usuario = await Usuario.findOne({
-            attributes: [ 'email','password'],
-            where: { email }
-        });
-
-        
-        if(usuario===null) throw {message: `Usuario no registrado`}
-
-        console.log(typeof(usuario.dataValues.password))
-        console.log(password)
+        if(usuario===null) throw {message: `Usuario no registrado`}  
      
         /*
         ComparePassword(usuario.dataValues.password, password, (error:any, esCorrecto:Boolean) => {
             
-            console.log(error)
-            console.log(esCorrecto)
-
+            //if(result) throw {message: "Hubo un error mientras se autenticaba, intentar más tarde"}
             
-            if(error) throw {message: "Hubo un error mientras se autenticaba, intentar más tarde"}
-            if(!esCorrecto) throw {message: "email y/o password son inválidas"}
+            if(result === false) throw {message: "email y/o password son inválidas"}
             delete usuario.dataValues.password
             res.json( usuario.dataValues );
             

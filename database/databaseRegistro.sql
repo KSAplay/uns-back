@@ -91,6 +91,8 @@ INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at)
     ('Enlaces',6, 1,'enlaces/enlaces',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at) VALUES  
+    ('Ingenieria de sistemas',5, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria civil',5, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
     ('Proceso de Inscripcion',7, 1,'admision/proceso-de-admision',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
     ('Cronograma',7, 2,'admision/cronograma',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
     ('Derecho de Inscripcion',7, 3,'admision/derecho-de-inscripcion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
@@ -154,3 +156,11 @@ INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at)
     ('Correo UNS',15, 7,'enlaces/correo-uns',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
     ('Transparencia Estandar',15, 8,'enlaces/transparencia-estandar',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
     ('Transparencia Universitaria',15,9,'enlaces/transparencia-universitaria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+
+
+INSERT INTO usuarios (nombres, apellidos, email, password, visible, create_at, update_at) VALUES
+    ('Kenny' ,'Saavedra Altuna', 'ksamusic@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Andres','Medina Charcape','charcapito@uns.edu.pe','$2b$10$k9xQ7J4CsNflX9jfhcL7ZuvGuELMBPTFBByPkdKP0by8U1p8mKysC', True, CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Diego' ,'Baes Vásquez', 'diegobaesv@uns.edu.pe', '$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Carlos','Villar Marin','carlosvm@uns.edu.pe','$2b$10$u3xAR4AOMa2A.gAT17SnveeKK4DXOQN5JOt.c8GncM6U8JKkkZ9Fy', True,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+    
