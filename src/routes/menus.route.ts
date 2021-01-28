@@ -1,15 +1,25 @@
 import { Router } from 'express';
 
-import { getMenuOfParent, updateMenuVisible} from '../controllers/menus.controller';
+import { deleteMenu, getMenuOfParent, updateMenuNombre, updateMenuPosicion, updateMenuVisible} from '../controllers/menus.controller';
 
 
 
 const router = Router();
+
+router.route('/:id_menu')
+    .delete(deleteMenu);
 
 router.route('/parent/:id_parent')
     .get(getMenuOfParent);
 
 router.route('/:id_menu/visible')
     .put(updateMenuVisible);
+
+router.route('/:id_menu/nombre')
+    .put(updateMenuNombre);
+
+router.route('/:id_menu/posicion')
+    .put(updateMenuPosicion);
+
 
 export default router;

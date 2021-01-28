@@ -66,16 +66,86 @@ INSERT INTO vinculos (host_imagen, nombre_imagen, visible, create_at, update_at)
     ('http://localhost:4000/uploads/vinculos' ,'uniBernardo.png', true, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
 
 INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at) VALUES  
-    ('Admision',null, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Facultades',null, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+('Admision',null, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+('Facultades',null, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+('Posgrado',null, 3,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+('Direcciones',null, 4,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+('C.De.Producion',null, 5,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+('Vinculos',null, 6,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);  
 
 INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at) VALUES  
-    ('Proceso de admision',1, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Cronograma',1, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Ingenieria',2, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Educacion',2, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Ciencias',2, 3,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+    ('Proceso de admision',1, 1,'admision/proceso-de-admision',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    
+    ('Ingenieria',2, 1,'ingenieria/facultad-de-ingenieria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ciencias',2, 2,'ciencias/facultad-de-ciencias',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Educacion',2, 3,'humanidades/facultad-de-educacion-y-humanidades',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Maestrias',3, 1,'maestrias/maestrias',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Doctorados',3, 2,'doctorados/doctorados',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Administracion',4, 1,'administracion/administracion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Instalaciones',5, 1,'instalaciones/instalaciones',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Enlaces',6, 1,'enlaces/enlaces',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
 
 INSERT INTO menus ( nombre, id_parent, orden, ruta, visible,create_at,update_at) VALUES  
-    ('Ingenieria de sistemas',5, 1,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
-    ('Ingenieria civil',5, 2,null,true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
+    ('Proceso de Inscripcion',7, 1,'admision/proceso-de-admision',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Cronograma',7, 2,'admision/cronograma',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Derecho de Inscripcion',7, 3,'admision/derecho-de-inscripcion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Inscripcion Online',7, 4,'admision/inscripcion-Online',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Tabla de Conversiones',7, 5,'tabla-de-conversiones',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Reglamento',7, 6,'admision/reglamento',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Temario',7, 7,'admision/temario',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Consejos',7, 8,'admision/consejos',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Preguntas Frecuentes',7, 9,'admision/preguntas-frecuentes',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),  
+
+    ('Ingenieria de Sistemas e Informatica',8, 1,'ingenieria/ingenieria-de-sistemas-e-informatica',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP), 
+    ('Ingenieria Civil',8, 2,'ingenieria/ingenieria-civil',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria Agroindustrial',8, 3,'ingenieria/ingenieria-agroindustrial',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria en Energia',8, 4,'ingenieria/Ingenieria-en-energia',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria Agronoma',8, 5,'ingenieria/ingenieria-agronoma',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria Mecanica',8, 6,'ingenieria/ingenieria-mecanica',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Biologia en Acuicultura',9, 1,'ciencias/biologia-en-acuicultura',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Enfemeria',9, 2,'ciencias/enfemeria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Biotecnologia',9, 3,'ciencias/biotecnologia',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Medicina Humana',9, 4,'ciencias/medicina-Humana',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Educacion Inicial',10, 1,'humanidades/educacion-inicial',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Educacion Primaria',10, 2,'humanidades/educacion-primaria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Comunicacion Social',10, 3,'humanidades/comunicacion-social',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Derecho y Ciencias politicas',10, 4,'humanidades/derecho-y-ciencias-politicas',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Educacion Secundaria',10, 5,'humanidades/educacion-secundaria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Derecho Constitucional',11, 1,'maestrias/derecho-constitucional',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Derecho Penal',11, 2,'maestrias/derecho-penal',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ciencias de Enfemeria',11, 3,'maestrias/ciencias-de-enfemeria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ciencias de la Educacion',11, 4,'maestrias/ciencias-de-la-educacion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ciencias Energeticas',11, 5,'maestrias/ciencias-energeticas',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Gerencia de industrias Agropecuarias',11, 6,'maestrias/gerencia-de-industrias-agropecuarias',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Gestion Ambiental',11, 7,'maestrias/gestion-ambiental',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Ingenieria Sistemas e Informatica',11, 8,'maestrias/ingenieria-sistemas-e-informatica',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Concepcion del Doctorado',12, 1,'doctorados/concepcion-del-doctorado',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Perfil del Doctor',12, 2,'doctorados/perfil-del-doctor',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Matricula',12, 3,'doctorados/matricula',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Inversion',12, 4,'doctorados/inversion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Informes e Inscripciones',12, 5,'doctorados/informes-e-inscripciones',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Rectorado',13, 1,'administracion/rectorado',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Vicerrectorado Academico',13, 2,'administracion/vicerrectorado-academico',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Vicerrectorado de Investigacion',13, 3,'administracion/vicerrectorado-de-investigacion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Direccion General de Administracion',13, 4,'administracion/direccion-general-de-administracion',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    
+    ('Centro Preuniversitario CEPUNS',14, 1,'instalaciones/centro-preuniversitario-cepuns',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Centro de Idiomas CEIDUNS',14, 2,'instalaciones/centro-de-idiomas-ceiduns',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Centro de Computo CECOMP',14, 3,'instalaciones/centro-de-computo-cecomp',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Institucion Educativa Experimental',14, 4,'instalaciones/institucion-educativa-experimental',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Planta Piloto Agroindustrial',14, 5,'instalaciones/planta-piloto-agroindustrial',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+
+    ('Universidad',15, 1,'enlaces/universidad',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Directorio',15, 2,'enlaces/directorio',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Intranet',15, 3,'enlaces/intranet',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Defensoria Universitaria',15, 4,'enlaces/defensoria-universitaria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Licenciamiento',15, 5,'enlaces/licenciamiento',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Campus virtual',15, 6,'enlaces/campus-virtual',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Correo UNS',15, 7,'enlaces/correo-uns',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Transparencia Estandar',15, 8,'enlaces/transparencia-estandar',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP),
+    ('Transparencia Universitaria',15,9,'enlaces/transparencia-universitaria',true,CURRENT_TIMESTAMP,CURRENT_TIMESTAMP);
