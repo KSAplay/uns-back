@@ -76,3 +76,13 @@ CREATE TABLE menus(
     create_at TIMESTAMP,
     update_at TIMESTAMP
 );
+
+DROP TABLE IF EXISTS sliders; 
+CREATE TABLE sliders(
+    id_slider SERIAL PRIMARY KEY,
+    nombre_imagen VARCHAR(1024),
+    host_imagen VARCHAR(1024),
+    visible BOOLEAN,
+    create_at TIMESTAMP,
+    update_at TIMESTAMP
+);
